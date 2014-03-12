@@ -1,0 +1,32 @@
+// Intrinsic Ratio Helper
+// Fork of https://github.com/hzdg/bedrock/blob/master/mixins/intrinsic-ratio.less
+
+// Default variables
+// Make sure to declare your variables where
+// they can be easily overridden.
+// 
+// e.g.
+// @import: 'variables.less'; <- In here
+// @import: 'mixins.less'
+
+@ir-ratio: 16/9;
+@ir-width: 100%;
+@ir-margin: auto;
+
+.ir(@ratio: @ir-ratio, @width: @ir-width, @margin: @ir-margin) {
+	position: relative;
+	margin: @margin;
+	width: unit(@width, ~'%');
+	height: 0;
+	padding-bottom: unit(@width / @ratio, ~'%');
+	> iframe, > video {
+		width: 100%;
+		height: 100%;
+	}
+}
+
+// Default helper class
+// Can be customized or mixed in as you desire
+// e.g: .video-responsive-example { .ir(4/3, 50%, 10px); }
+
+.video-responsive { .ir(); }

@@ -28,6 +28,7 @@ Fork of https://github.com/hzdg/bedrock/blob/master/mixins/intrinsic-ratio.less
 	height: 0;
 	padding-bottom: unit(@width / @ratio, ~'%');
 	> iframe, > video {
+		position: absolute;
 		width: 100%;
 		height: 100%;
 	}
